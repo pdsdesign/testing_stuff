@@ -1,0 +1,131 @@
+// Flex
+.flex__wrapper {
+  margin-top: ritmo(15);
+  background: palette(grey);
+  padding: ritmo(10) 0;
+}
+
+.flex__wrapper1-content {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  @include container(1240px);
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  font-weight: 300;
+  text-align: center;
+}
+
+.flex__wrapper1-content > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.flex__wrapper1-header {
+  background: palette(black);
+  color: palette(white);
+}
+
+.flex__wrapper1-footer {
+  background: palette(grey, mid-dark);
+  color: palette(white);
+}
+
+.flex__wrapper1-main {
+  text-align: left;
+  background: palette(white);
+  color: palette(black);
+}
+
+.flex__aside-1 {
+  background: rgba(palette(black), .75);
+  color: palette(white);
+}
+
+.flex__aside-2 {
+  background: rgba(palette(black), .55);
+  color: palette(white);
+}
+
+
+@include mq($from: break-medium-small) {
+  .flex__aside {
+    flex: 1 20%;
+  }
+}
+
+@include mq($from: break-large) {
+  .flex__wrapper1-main {
+    flex: 3 60%;
+  }
+
+  .flex__aside-1 {
+    order: 1;
+  }
+
+  .flex__wrapper1-main {
+    order: 2;
+  }
+
+  .flex__aside-2 {
+    order: 3;
+  }
+
+  .flex__wrapper1-footer {
+    order: 4;
+  }
+}
+
+/*
+** LIST
+*/
+
+.flex__wrapper-list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  @include container(1240px);
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  padding: ritmo() 10px;
+  //justify-content: space-around;
+}
+
+.flex__wrapper-list-item {
+  padding: ritmo(6) 10px;
+  text-align: center;
+  flex: 1 100%;
+  background: rgba(palette(black), .15);
+  margin-bottom: 1%;
+
+
+  @include mq($from: break-medium-small) {
+    flex: 1 30%;
+    margin-left: 1%;
+
+    &:nth-child(3n+1) {
+      margin-left: 0;
+    }
+  }
+
+  @include mq($from: break-medium) {
+    flex: 1 23%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    padding: ritmo(10) 10px;
+
+    &:nth-child(3n+1) {
+      margin-left: 2%;
+    }
+
+    &:nth-child(4n+1) {
+      margin-left: 0;
+      background: rgba(palette(black),.35);
+    }
+  }
+}
+

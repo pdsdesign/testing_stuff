@@ -1,0 +1,78 @@
+//- Animation svg lines
+
+.svg-line-animation__content {
+  text-align: center;
+  margin: ritmo(15) auto auto auto;
+}
+
+.svg-line-animation {
+  max-width: 300px;
+  padding: 10px;
+}
+
+.svg-line-animation path {
+  fill: none;
+  stroke: palette(black);
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1700;
+  stroke-dashoffset: 1700;
+  animation: dash1 1.5s linear alternate infinite;
+}
+
+@keyframes dash1 {
+  80% {
+    stroke-dashoffset: 500;
+    stroke-width: 1;
+    fill: palette(white);
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-width: 1;
+    fill: palette(black);
+  }
+}
+
+
+//- text typing animation
+
+.text-typing {
+  width: 1000px;
+  height: 100px;
+  border-top: 1px solid palette(grey);
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+
+  p {
+    color: palette(black);
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: type1 3s steps(50) infinite;
+  }
+}
+
+@keyframes type1 {
+  0% {
+    width: 0;
+  }
+}
+
+//- SVG clone
+
+.svg-sprite {
+  display: none;
+}
+
+.svg-clone {
+  border: thin solid red;
+  height: 500px;
+
+  svg {
+    width: 100%;
+  }
+}
