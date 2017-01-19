@@ -105,27 +105,36 @@
 
   @include mq($from: break-medium-small) {
     flex: 1 30%;
-    margin-left: 1%;
-
-    &:nth-child(3n+1) {
-      margin-left: 0;
-    }
+    margin: 0 0.5% 1%;
   }
 
   @include mq($from: break-medium) {
     flex: 1 23%;
-    margin-left: 2%;
-    margin-bottom: 2%;
+    margin: 0 1% 2%;
     padding: ritmo(10) 10px;
-
-    &:nth-child(3n+1) {
-      margin-left: 2%;
-    }
-
-    &:nth-child(4n+1) {
-      margin-left: 0;
-      background: rgba(palette(black),.35);
-    }
   }
 }
 
+
+/*
+** Table-like exercise
+*/
+
+.flex__table {
+  width: 100%;
+  display: flex;
+  align-items: strech;
+  justify-content: space-around;
+  height: 200px;
+  background: palette(black);
+  padding: 20px 0;
+}
+
+.flex__table-item {
+  padding: 0 10px;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  background: palette(white);
+  color: palette(black);
+}
