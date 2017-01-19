@@ -1,0 +1,97 @@
+.almanac {
+  @extend .child-selectors;
+}
+
+.almanac__content {
+  @extend .child-selectors__content;
+  margin-bottom: ritmo(10);
+}
+
+/*
+** :first-of-type and :last-of-type examples
+*/
+
+.almanac__content__first-of-type {
+
+  p {
+    &:first-of-type {
+      font-weight: 700;
+      border-top: 1px solid palette(grey);
+      padding-top: ritmo(5);
+      margin-top: ritmo(5);
+    }
+
+    &:last-of-type {
+      color: rgba(255, 0, 0,1);
+    }
+  }
+}
+
+
+/*
+** :not(s) examples
+*/
+
+.almanac__content__not-list {
+  margin: 0 auto;
+  text-align: center;
+  padding: 2*gutters() gutters();
+  display: block;
+  @include clearfix;
+}
+
+
+.almanac__content__not-list-item {
+  color: palette(white);
+  background: palette(grey);
+  @include span(3);
+  text-align: center;
+  padding-top: ritmo(10);
+  padding-bottom: ritmo(10);
+  margin-bottom: 2*gutters();
+
+  &:not(:nth-child(2n+2)) {
+    background: palette(black);
+  }
+
+  @include mq($from: break-medium) {
+    @include span(2);
+
+    &:not(:nth-child(2n+2)) {
+      background: palette(grey);
+    }
+
+    &:not(:nth-child(3n+3)) {
+      background: palette(black);
+    }
+  }
+
+  @include mq($from: break-large) {
+    @include span(1.5);
+
+    &:not(:nth-child(3n+3)) {
+      background: palette(grey);
+    }
+
+    &:not(:nth-child(4n+4)) {
+      background: palette(black);
+    }
+  }
+}
+
+/*
+** :Gereral Simbling
+*/
+
+.almanac__content__general-simbling {
+  margin-top: ritmo(5);
+
+  p {
+    font-weight: 700;
+  }
+}
+
+
+.almanac__content__general-simbling--first ~ p {
+  font-weight: 300;
+}

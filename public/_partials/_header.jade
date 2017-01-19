@@ -1,0 +1,27 @@
+header
+
+  .navigation
+
+      .navigation__mobile-menu__toggle
+
+        span.navigation__mobile-menu__icon
+
+      ul.navigation__menu
+
+        li.navigation__menu__item(class="#{ current.path[0] == 'index' ? 'is-active' : '' }")
+          a(href='/') Home
+
+        li.navigation__menu__item(class="#{ current.path[0] == 'animations' ? 'is-active' : '' }")
+          a(href='/animations') Animations
+
+        li.navigation__menu__item(class="#{ current.path[0] == 'parallax' ? 'is-active' : '' }")
+          a(href='/parallax') Parallax
+
+        li.navigation__menu__item(class="#{ current.path[0] == 'flex' ? 'is-active' : '' }")
+          a(href='/flex') Flex
+
+        li.navigation__menu__item(class="#{ current.path[0] == 'child-selectors' ? 'is-active' : '' }")
+          a(href='/child-selectors') Child Selectors
+
+        li.navigation__menu__item(class="#{ current.path[0] == 'almanac' ? 'is-active' : '' }")
+          a(href='/almanac') Almanac
